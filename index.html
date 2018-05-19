@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <title> input type="number"</title>
+
+</head>
+
+<body>
+<div>
+<input type="number" id="input" onkeyup="addLinsterFunc()">
+</div>
+<script type="text/javascript">
+
+	function addLinsterFunc(){
+		var onlyNumberRegExp = /^\d*\.?\d{1,2}$/;
+		var checkResult = onlyNumberRegExp.test(document.querySelector("#input").value);
+		console.log("document.querySelector('#input').value:"+ document.querySelector("#input").value);
+		if(checkResult){
+			console.log("符合");
+		}else{
+			document.querySelector("#input").focus();
+			console.log("请输入正确的小数");
+		}
+		
+	}
+	
+</script>
+</body>
+</html>
